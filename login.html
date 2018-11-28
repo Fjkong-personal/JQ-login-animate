@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<style type="text/css">
+			.log-box{
+				font-family: 幼圆;
+				text-align: center;
+				width: 600px;
+				border-radius: 10px;
+				height: 300px;
+				background-color: deepskyblue;
+				position: fixed;
+				top: 30%;
+				left: 50%;
+				z-index: 999;
+				margin: -150px 0 0 -350px;
+				
+			}
+			.log-main{
+				margin-top: 50px;
+			}
+			span.close{
+				margin-top: 10px;
+				font-family: 宋体;
+				float: right;
+				margin-right: 20px;
+				cursor: pointer;
+			}
+			.log-mes{
+				clear: both;
+			}
+			.text-box{
+				width: 200px;
+				height: 25px;
+				border-radius: 5px;
+				color: white;
+				background-color: rgba(255,255,255,.5);
+				
+			}
+			#username{
+				margin-left: -10px;
+			}
+			.mybut{
+				margin: 20px 5px 0 5px;
+				width: 80px;
+				height: 40px;
+				border: none;
+				color: white;
+				font-size: 16px;
+				background-color: palevioletred;
+				border-radius: 5px;
+			}
+			.log-bac{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				left: 0;
+				top: 0;
+				background-color: rgba(0,0,0,.3);
+				z-index: 998;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login" style="cursor: pointer; display: inline-block;">登录</div>
+		<div class="log-box" style="display: none;">
+			<span class="close">×</span>
+			<div class="log-main">
+			<div class="log-mes">
+				<form>
+					<P id="username">用户名：<input class="text-box" type="text" name="username"></P>
+					<p id="password">密码：<input class="text-box" type="password" name="password"></p>
+					<button class="okbut">登录</button>
+					<button class="celbut">取消</button>
+				</form>
+			</div>
+			</div>
+		</div>
+		<div class="log-bac" style="display: none;" ></div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".login").click(function(){
+				$(".log-box").slideDown();
+				$(".log-bac").fadeIn();
+			});
+			$(".close").click(function(){
+				$(".log-box").slideUp();
+				$(".log-bac").fadeOut();
+				
+			});
+			$(".log-bac").click(function(){
+				$(".log-box").slideUp();
+				$(".log-bac").fadeOut();
+			})
+		});
+	</script>
+</html>
